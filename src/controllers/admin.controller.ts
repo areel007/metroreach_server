@@ -20,12 +20,6 @@ export class AdminController {
     res.status(401).json({ message: "Invalid credentials" });
   }
 
-  public downloadForm(req: Request, res: Response) {
-    const filePath = path.join(__dirname, "../../data/submissions.csv");
-    // res.download(filePath);
-    res.status(200).json({ message: filePath });
-  }
-
   public logout(req: Request, res: Response) {
     res.status(200).json({ message: "Logout successful" });
   }
