@@ -5,6 +5,7 @@ import { adminAuth } from "../middlewares/auth.middleware";
 const router = Router();
 
 router.post("/auth", new AdminController().login);
-router.get("/download", adminAuth, new AdminController().downloadForm);
+router.route("/auth").post(new AdminController().login);
+router.post("/logout", adminAuth, new AdminController().logout);
 
 export default router;
